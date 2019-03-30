@@ -10,6 +10,22 @@
   </head>
 
   <body>
+    <header class="row">
+
+      <div class="col-3">
+        LOGO
+      </div>
+      <div class="col-4">
+        You know you're from Arizona if you're on this webpage
+      </div>
+      <div class="col-5">
+        <%= link_to 'Contribute', '#' %>
+        <%= link_to 'About', '#' %>
+      </div>
+    </header>
+
+    <br class="clear" />
+
     <%= yield %>
   </body>
 </html>
