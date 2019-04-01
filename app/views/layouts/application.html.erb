@@ -27,8 +27,8 @@
         You know you're from Arizona if you're on this webpage
       </div>
       <div class="col-2 links">
-        <%= link_to 'Contribute', new_quote_path %>
-
+        <!-- Button trigger modal -->
+        <%= link_to 'Contribute', '#', data: {toggle: 'modal', target: '#myModal'} %>
       </div>
       <div class="col-2 links">
         <%= link_to 'About', about_path %>
@@ -36,6 +36,29 @@
       </div>
     </header>
 
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">You know you're from Arizona when...</h4>
+            </div>
+            <%= simple_form_for Quote.new do |f| %>
+              <div class="modal-body">
+                <%= f.input :saying %>
+                <%= f.input :author %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <%= f.submit 'Create', class: 'btn btn-danger' %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
     <hr />
 
     <br class="clear" />
